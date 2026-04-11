@@ -10,10 +10,10 @@
 
 **Multi-Profile Identity & Security Manager for Git**
 
-[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/wd006/gitmux/releases)
+[![Latest Version](https://img.shields.io/github/v/tag/wd006/gitmux?sort=semver&color=blue&label=version)](https://github.com/wd006/gitmux/tags)
 [![Platform](https://img.shields.io/badge/platform-macOS%20%7C%20Linux-lightgrey.svg)]()
-[![Bash](https://img.shields.io/badge/language-Bash-green.svg)]()
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Top Language](https://img.shields.io/github/languages/top/wd006/gitmux?color=green)](https://github.com/wd006/gitmux)
+[![License](https://img.shields.io/github/license/wd006/gitmux)](LICENSE)
 
 </div>
 
