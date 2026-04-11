@@ -6,6 +6,7 @@ node_modules/
 .Trashes
 ehthumbs.db
 Thumbs.db
+.vscode/
 
 # GitMux logs
 gitmux_summary.log
