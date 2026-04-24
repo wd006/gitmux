@@ -189,6 +189,30 @@ EOF
         fi
     fi
 
+    # global gitignore files
+    echo -e "\n    ${BLUE}Profile-Specific Global .gitignore${NC}"
+    read -p "    [?] Add a custom global .gitignore for this profile? (y/n): " ENABLE_IGNORE
+    
+    if [[ "$ENABLE_IGNORE" =~ ^[Yy]$ ]]; then
+        read -p "    [?] Enter the path to the existing .gitignore file: " SOURCE_IGNORE
+        
+        SOURCE_IGNORE="${SOURCE_IGNORE/#\~/$HOME}"
+        
+        if [[ -f "$SOURCE_IGNORE" ]]; then
+            DEST_IGNORE="$HOME/.gitignore-$PROF_NAME"
+            
+            cp "$SOURCE_IGNORE" "$DEST_IGNORE"
+            
+            cat >> "$SUB_CONFIG_FILE" << EOF
+[core]
+    excludesFile = $DEST_IGNORE
+EOF
+            echo -e "    ${GREEN}[+] Global .gitignore copied and configured ($DEST_IGNORE).${NC}"
+        else
+            echo -e "    ${RED}[-] Error: File not found at '$SOURCE_IGNORE'. Skipping gitignore setup.${NC}"
+        fi
+    fi
+
     # append routing rules to global git config block
     GITCONFIG_BLOCK+="$(cat <<EOF
 
